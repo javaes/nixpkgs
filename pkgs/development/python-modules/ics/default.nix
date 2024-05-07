@@ -51,6 +51,8 @@ buildPythonPackage rec {
     "test_event"
     # Broke with TatSu 5.7:
     "test_many_lines"
+    # upcoming release misses this test, upstream issue: https://github.com/ics-py/ics-py/issues/414
+    "test_timezone_not_dropped"
   ];
 
   pythonImportsCheck = [
@@ -66,6 +68,6 @@ buildPythonPackage rec {
     homepage = "http://icspy.readthedocs.org/";
     changelog = "https://github.com/ics-py/ics-py/releases/tag/v${version}";
     license = licenses.asl20;
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [ javaes ];
   };
 }
